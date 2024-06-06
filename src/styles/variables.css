@@ -10,6 +10,8 @@
   --color-placeholder: #888888;
   --color-border: #dddddd;
   --color-label: #ffffff;
+  --color-label-error-message: #e74c3c;
+  --color-box-shadow: #0000001a;
 
   --spacing-xs: 8px;
   --spacing-s: 16px;
