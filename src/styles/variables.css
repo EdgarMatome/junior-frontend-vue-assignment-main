@@ -1,0 +1,31 @@
+:root {
+  --color-primary: #84c7ae;
+  --color-primary-dark: #34876e;
+  --color-primary-light: #c1e3d6;
+  --color-page-background: #a7d7c5;
+  --color-form-background: #f6fbf9;
+  --color-field-background: #ffffff;
+  --color-heading: #212b27;
+  --color-paragraph: #32403b;
+  --color-placeholder: #888888;
+  --color-border: #dddddd;
+  --color-label: #ffffff;
+
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 32px;
+  --spacing-l: 48px;
+
+  --border-radius-s: 8px;
+  --border-radius-m: 12px;
+  --border-radius-l: 48px;
+
+  --font-size-s: 12px;
+  --font-size-m: 15px;
+  --font-size-l: 24px;
+  --font-size-h1: 32px;
+
+  --font-weight-bold: 700;
+
+  --opacity-disabled: 0.6;
+}

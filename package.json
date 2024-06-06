@@ -1,0 +1,53 @@
+{
+  "name": "junior-frontend-vue-assignment",
+  "version": "1.0.0",
+  "description": "Home assignment for a Junior Frontend (Vue) candidate.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open & npm run type:watch",
+    "build": "npm run type && vite build",
+    "format": "prettier --write .",
+    "prepare": "husky && playwright install --with-deps chromium",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006 & npm run type:watch",
+    "test:storybook": "test-storybook",
+    "test:storybook:watch": "test-storybook --watch",
+    "type": "vue-tsc --noEmit",
+    "type:watch": "vue-tsc --noEmit --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImpactInc/junior-frontend-vue-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImpactInc/junior-frontend-vue-assignment/issues"
+  },
+  "homepage": "https://github.com/ImpactInc/junior-frontend-vue-assignment#readme",
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.0.10",
+    "@storybook/addon-designs": "8.0.0",
+    "@storybook/addon-essentials": "^8.0.10",
+    "@storybook/addon-interactions": "^8.0.10",
+    "@storybook/test": "^8.0.10",
+    "@storybook/test-runner": "^0.17.0",
+    "@storybook/vue3": "^8.0.10",
+    "@storybook/vue3-vite": "^8.0.10",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "husky": "^9.0.11",
+    "playwright": "^1.44.0",
+    "prettier": "^3.2.5",
+    "storybook": "^8.0.10",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.11",
+    "vue-tsc": "^2.0.6"
+  },
+  "volta": {
+    "node": "20.13.0"
+  }
+}

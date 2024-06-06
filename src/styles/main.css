@@ -1,0 +1,13 @@
+@import "variables";
+
+:root {
+  font-family: Karla, system-ui, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-m);
+  line-height: normal;
+  letter-spacing: 0.04px;
+}
+
+a,
+a:hover {
+  color: var(--color-primary-dark);
+}
