@@ -37,7 +37,7 @@ withDefaults(defineProps<BaseButtonProps>(), {
   font-family: inherit;
   font-weight: var(--font-weight-bold);
   display: block;
-    margin: 0 auto;
+  margin: 0 auto;
 
   &:not(.disabled) {
     cursor: pointer;
