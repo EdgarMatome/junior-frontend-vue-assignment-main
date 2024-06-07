@@ -45,7 +45,7 @@ withDefaults(defineProps<BaseButtonProps>(), {
 }
 
 .m {
-  height: 32px;
+  height: 48px;
   padding: 0 var(--spacing-s);
   font-size: var(--font-size-m);
   border-radius: var(--border-radius-s);
