@@ -26,7 +26,7 @@
         <BaseButton label="Create Account" type="submit" />
       </form>
       <p class="signin-link">
-        Already Have An Account? <a href="#">Sign In</a>
+        Already Have An Account? <a href="/sign-in">Sign In</a>
       </p>
     </div>
   </div>
