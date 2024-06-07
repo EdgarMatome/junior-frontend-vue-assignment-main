@@ -29,7 +29,11 @@
         Already Have An Account? <a href="/sign-in">Sign In</a>
       </p>
     </div>
-    <BaseNotification ref="notification" :message="notificationMessage" :type="notificationType" />
+    <BaseNotification
+      ref="notification"
+      :message="notificationMessage"
+      :type="notificationType"
+    />
   </div>
 </template>
 
@@ -51,7 +55,7 @@ export default {
       emailError: "",
       passwordError: "",
       notificationMessage: "",
-      notificationType: "success"
+      notificationType: "success",
     };
   },
   methods: {
@@ -73,7 +77,9 @@ export default {
         this.password = "";
         this.notificationMessage = "Account created successfully!";
         this.notificationType = "success";
-        (this.$refs.notification as InstanceType<typeof BaseNotification>).show();
+        (
+          this.$refs.notification as InstanceType<typeof BaseNotification>
+        ).show();
       }
     },
   },

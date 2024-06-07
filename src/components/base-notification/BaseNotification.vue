@@ -9,26 +9,26 @@ export default {
   props: {
     message: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      default: 'success' // 'success' or 'error'
-    }
+      default: "success", // 'success' or 'error'
+    },
   },
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
   methods: {
-    show():void {
+    show(): void {
       this.visible = true;
       setTimeout(() => {
         this.visible = false;
       }, 3000);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -45,10 +45,10 @@ export default {
 }
 
 .success {
-  background-color: var(--color-success-message)
+  background-color: var(--color-success-message);
 }
 
 .error {
-  background-color: var(--color-label-error-message)
+  background-color: var(--color-label-error-message);
 }
 </style>
