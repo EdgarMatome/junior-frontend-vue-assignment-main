@@ -29,17 +29,20 @@
         Already Have An Account? <a href="/sign-in">Sign In</a>
       </p>
     </div>
+    <BaseNotification ref="notification" :message="notificationMessage" :type="notificationType" />
   </div>
 </template>
 
 <script lang="ts">
 import BaseInput from "../components/base-input/BaseInput.vue";
 import BaseButton from "../components/base-button/BaseButton.vue";
+import BaseNotification from "../components/base-notification/BaseNotification.vue";
 
 export default {
   components: {
     BaseInput,
     BaseButton,
+    BaseNotification,
   },
   data() {
     return {
@@ -47,6 +50,8 @@ export default {
       password: "",
       emailError: "",
       passwordError: "",
+      notificationMessage: "",
+      notificationType: "success"
     };
   },
   methods: {
@@ -64,6 +69,11 @@ export default {
       if (!this.emailError && !this.passwordError) {
         console.log("Email:", this.email);
         console.log("Password:", this.password);
+        this.email = "";
+        this.password = "";
+        this.notificationMessage = "Account created successfully!";
+        this.notificationType = "success";
+        (this.$refs.notification as InstanceType<typeof BaseNotification>).show();
       }
     },
   },
