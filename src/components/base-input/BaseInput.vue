@@ -4,47 +4,64 @@
       :type="type"
       :value="modelValue"
       @input="onInput"
+      @blur="onBlur"
       :placeholder="placeholder"
       :required="required"
-      :class="{'input-error': error}"
+      :class="{ 'input-error': error }"
     />
     <p v-if="error" class="error-message">{{ error }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'BaseInput',
+  name: "BaseInput",
   props: {
     modelValue: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      default: 'text'
+      default: "text",
     },
     placeholder: {
       type: String,
-      default: ''
+      default: "",
     },
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     error: {
       type: String,
-      default: ''
+      default: "",
     },
   },
   methods: {
-    onInput(event: Event) {
+    onInput(event: Event): void {
       const target = event.target as HTMLInputElement;
-      this.$emit('update:modelValue', target.value);
-    }
-  }
+      this.$emit("update:modelValue", target.value);
+      if (this.type === "email") {
+        this.validateEmail(target.value);
+      }
+    },
+    onBlur(): void {
+      if (this.type === "email") {
+        this.validateEmail(this.modelValue);
+      }
+    },
+    validateEmail(value: string): void {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (value && !emailPattern.test(value)) {
+        this.$emit("update:error", "Invalid email address");
+      } else {
+        this.$emit("update:error", "");
+      }
+    },
+  },
 });
 </script>
 
@@ -52,15 +69,15 @@ export default defineComponent({
 .base-input {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
 .base-input input {
+  width: 500px;
   padding: 0.75rem;
-  margin-bottom: 1rem;
   border: 1.53px solid var(--color-border);
   border-radius: var(--border-radius-m);
-  font-size: 15px;
+  font-size: var(--font-size-m);
 }
 
 .base-input .input-error {
@@ -69,7 +86,7 @@ export default defineComponent({
 
 .base-input .error-message {
   color: var(--color-label-error-message);
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+  font-size: var(--font-size-m);
+  margin-top: 8px;
 }
 </style>

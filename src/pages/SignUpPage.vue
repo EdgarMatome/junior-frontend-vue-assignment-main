@@ -5,7 +5,8 @@
     <div class="signup-box">
       <h1>Create An Account</h1>
       <p>
-        Create an account to enjoy all the services <br/> without any ads for free!
+        Create an account to enjoy all the services <br />
+        without any ads for free!
       </p>
       <form @submit.prevent="createAccount">
         <BaseInput
@@ -80,8 +81,8 @@ export default {
   overflow: hidden;
 }
 
-
-.shape-top-left, .shape-bottom-right {
+.shape-top-left,
+.shape-bottom-right {
   position: absolute;
   width: 350px;
   height: 350px;
